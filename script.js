@@ -3,7 +3,7 @@ const encoder = new TextEncoder()
 const options = {
 	challenge: encoder.encode('challange'),
 	rp: {
-		id: 'lorem',
+		id: location.hostname,
 		name: 'lorem'
 	},
 	user: {
