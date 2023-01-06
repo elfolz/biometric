@@ -12,11 +12,11 @@ const options = {
 		name: 'lorem',
 		displayName: 'lorem'
 	},
+	authenticatorSelection: {
+		authenticatorAttachment: 'platform'
+	},
 	pubKeyCredParams: [
-		{
-			type: 'public-key',
-			alg: -7
-		}
+		{type: 'public-key', alg: -7}
 	],
 	attestation: 'direct'
 }
