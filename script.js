@@ -1,14 +1,15 @@
 const encoder = new TextEncoder()
 
-const challange = encoder.encode('lorem')
-
-const publicKey = {
-	challange: challange,
+const options = {
+	challenge: encoder.encode('challange'),
 	rp: {
+		id: 'lorem',
 		name: 'lorem'
 	},
 	user: {
-		id: '123456'
+		id: encoder.encode('123456'),
+		name: 'lorem',
+		displayName: 'lorem'
 	},
 	pubKeyCredParams: [
 		{
@@ -19,8 +20,7 @@ const publicKey = {
 }
 
 document.querySelector('button').onclick = () => {
-	console.log(0)
-	navigator.credentials.create({publicKey})
+	navigator.credentials.create({publicKey: options})
 	.then(response => {
 		console.log(response)
 		alert(response)
