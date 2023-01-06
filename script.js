@@ -55,7 +55,7 @@ document.querySelector('button:nth-of-type(2)').onclick = () => {
 }
 
 document.querySelector('button:nth-of-type(3)').onclick = () => {
-	credential = new FederatedCredential({id: 1, name: 'lorem', provider: location.host})
+	credential = new FederatedCredential({id: 1, name: 'lorem', provider: location.origin})
 	navigator.credentials.store(credential)
 	.then(() => {
 		console.log('Success')
@@ -66,7 +66,7 @@ document.querySelector('button:nth-of-type(3)').onclick = () => {
 }
 
 document.querySelector('button:nth-of-type(4)').onclick = () => {
-	navigator.credentials.get('conditional')
+	navigator.credentials.get('required')
 	.then(credential => {
 		alert(`Seu ID: ${credential.id}`)
 	})
