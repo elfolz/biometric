@@ -16,18 +16,15 @@ const options = {
 			type: 'public-key',
 			alg: -7
 		}
-	],
-	transports: ['usb', 'ble', 'nf']
+	]
 }
 
 document.querySelector('button').onclick = () => {
 	navigator.credentials.create({publicKey: options})
 	.then(response => {
-		console.log(response.response.getTransports())
-		alert(response.response.getTransports())
+		console.log(response)
 	})
 	.catch(error => {
 		console.log(error)
-		alert(error)
 	})
 }
