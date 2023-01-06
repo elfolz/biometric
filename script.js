@@ -20,7 +20,7 @@ const publicKey = {
 
 document.querySelector('button').onclick = () => {
 	console.log(0)
-	navigator.credentials.create(publicKey)
+	navigator.credentials.create({publicKey})
 	.then(response => {
 		console.log(response)
 		alert(response)
