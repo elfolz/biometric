@@ -19,10 +19,20 @@ const options = {
 	]
 }
 
-document.querySelector('button').onclick = () => {
+document.querySelector('button:first-of-type').onclick = () => {
 	navigator.credentials.create({publicKey: options})
-	.then(response => {
-		console.log(response)
+	.then(credential => {
+		console.log(credential)
+	})
+	.catch(error => {
+		console.log(error)
+	})
+}
+
+document.querySelector('button:last-of-type').onclick = () => {
+	navigator.credentials.get({publicKey: {challenge: encoder.encode('challange')}})
+	.then(credential => {
+		console.log(credential)
 	})
 	.catch(error => {
 		console.log(error)
